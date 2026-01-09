@@ -2,7 +2,6 @@
 import os
 from telethon import TelegramClient, events
 from dotenv import load_dotenv
-
 from filters import is_relevant, contains_remote_option
 from emailer import send_email
 

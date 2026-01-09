@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "pydantic>=2.12.5",
     "python-dotenv>=1.2.1",
     "stagehand>=0.5.9",
     "telethon>=1.42.0",

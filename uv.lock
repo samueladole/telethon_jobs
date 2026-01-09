@@ -1529,6 +1529,7 @@ name = "telethon-job"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "stagehand" },
     { name = "telethon" },
@@ -1536,6 +1537,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "pydantic", specifier = ">=2.12.5" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
     { name = "stagehand", specifier = ">=0.5.9" },
     { name = "telethon", specifier = ">=1.42.0" },
