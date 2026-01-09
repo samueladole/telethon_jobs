@@ -10,12 +10,13 @@ def send_email(subject: str, content: str, to_address: str = os.getenv("EMAIL_RE
     """Sends an email with the given subject and content."""
     smtp_server = os.getenv("SMTP_SERVER")
     smtp_port = os.getenv("SMTP_PORT")
-    smtp_user = os.getenv("SMTP_USER")
-    smtp_password = os.getenv("SMTP_PASSWORD")
+    smtp_user = os.getenv("SMTP_API_USER")
+    smtp_sender = os.getenv("SMTP_USER")
+    smtp_password = os.getenv("SMTP_KEY")
 
     msg = MIMEText(content)
     msg['Subject'] = subject
-    msg['From'] = smtp_user
+    msg['From'] = smtp_sender
     msg['To'] = to_address
 
     with smtplib.SMTP(smtp_server, smtp_port) as server:
