@@ -1,4 +1,5 @@
 """Filters for job postings."""
+import re
 
 KEYWORDS = [
 "developer",
@@ -18,3 +19,14 @@ def is_relevant(text: str) -> bool:
     """Check if the text contains any relevant keywords."""
     text = text.lower()
     return any(keyword in text for keyword in KEYWORDS)
+
+def extract_apply_link(text: str) -> str | None:
+    """Extract the first URL from the text."""
+    match = re.search(r"https?://\S+", text)
+    return match.group(0) if match else None
+
+def contains_remote_option(text: str) -> bool:
+    """Check if the job posting mentions remote work options."""
+    text = text.lower()
+    remote_keywords = ["remote", "work from home", "telecommute", "distributed team"]
+    return any(keyword in text for keyword in remote_keywords)

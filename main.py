@@ -3,7 +3,7 @@ import os
 from telethon import TelegramClient, events
 from dotenv import load_dotenv
 
-from filters import is_relevant
+from filters import is_relevant, contains_remote_option
 from emailer import send_email
 
 load_dotenv()
@@ -21,7 +21,8 @@ async def handler(event):
     if not text:
         return
 
-    if is_relevant(text):
+    # Check if the job posting is relevant and mentions remote options
+    if is_relevant(text) and contains_remote_option(text):
         print("✅ MATCH FOUND")
         print(text)
 
