@@ -1,4 +1,5 @@
 """Filters for job postings."""
+import datetime
 import re
 
 KEYWORDS = [
@@ -30,3 +31,7 @@ def contains_remote_option(text: str) -> bool:
     text = text.lower()
     remote_keywords = ["remote", "work from home", "telecommute", "distributed team"]
     return any(keyword in text for keyword in remote_keywords)
+
+def get_offset_date(days: int = 7) -> datetime.datetime:
+    """Get the offset date for filtering old messages."""
+    return datetime.datetime.now(tz=datetime.timezone.utc) - datetime.timedelta(days=days)
