@@ -97,7 +97,7 @@ async def main():
     """Main function to start the Telegram client."""
     await client.start()
     print("🤖 Listening to channel...")
-    await read_old_messages(client, channel)
+    # await read_old_messages(client, channel) # Uncomment to read old messages on startup
     await client.run_until_disconnected()
 
 
