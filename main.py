@@ -25,26 +25,28 @@ async def handler(event):
         print("✅ MATCH FOUND")
         print(text)
 
-    link = None
-    if event.message.entities:
-        for entity in event.message.entities:
-            if hasattr(entity, "url"):
-                link = entity.url
+        link = None
+        if event.message.entities:
+            for entity in event.message.entities:
+                if hasattr(entity, "url"):
+                    link = entity.url
 
-        email_body = f"""
-        New Job Alert 🚀
+            email_body = f"""
+            New Job Alert 🚀
 
-        {text}
+            {text}
 
-        Link: {link if link else 'No link found'}
-        """
+            Link: {link if link else 'No link found'}
+            """
 
-        send_email(
-        subject="New Developer / Data Job Found",
-        content=email_body
-        )
+            send_email(
+            subject="New Developer / Data Job Found",
+            content=email_body
+            )
 
-        print("📧 Email sent")
+            print("📧 Email sent")
+    else:
+        print("❌ Job posted but no match")
 
 async def main():
     """Main function to start the Telegram client."""
