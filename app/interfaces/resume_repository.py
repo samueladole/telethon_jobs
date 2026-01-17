@@ -1,9 +1,7 @@
 from typing import Protocol
-from app.domain.entities import Resume
-
+from app.domain.entities.resume import Resume
 
 class ResumeRepository(Protocol):
-    """Protocol for resume repository."""
 
     def save(self, resume: Resume, job_id: str) -> None:
         ...

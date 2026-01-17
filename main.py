@@ -2,6 +2,7 @@ from app.bootstrap import build_container
 from config.load import load_config
 
 def main():
+    """Main entry point of the application."""
     config = load_config()
     container = build_container(config)
     container["listener"].start()

@@ -1,5 +1,5 @@
 from typing import List
-from app.domain.value_objects import FormField
+from app.domain.value_objects.form_field import FormField
 
 
 class BrowserAutomation:

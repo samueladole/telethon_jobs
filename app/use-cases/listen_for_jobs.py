@@ -7,6 +7,8 @@ from app.services.job_filter import JobFilter
 
 
 class ListenForJobs:
+    """Listens for job postings from a Telegram channel and processes them."""
+
     def __init__(
         self,
         telegram_client: TelegramClient,
