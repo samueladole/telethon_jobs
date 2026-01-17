@@ -1,5 +1,6 @@
-from app.domain.entities import JobPosting, ApplicationResult
-from app.services.strategy_resolver import StrategyResolver
+from app.domain.entities.application_result import ApplicationResult
+from app.domain.entities.job_posting import JobPosting
+from app.services.strategies.strategy_resolver import StrategyResolver
 
 
 class ApplyForJob:

@@ -1,6 +1,6 @@
 from typing import List
 from app.domain.entities.job_posting import JobPosting
-from app.services.application_strategy import ApplicationStrategy
+from app.interfaces.application_strategy import ApplicationStrategy
 
 
 class StrategyResolver:

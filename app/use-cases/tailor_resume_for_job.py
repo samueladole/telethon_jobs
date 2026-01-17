@@ -1,6 +1,7 @@
 from app.interfaces.resume_repository import ResumeRepository
-from app.services.resume_tailoring_service import ResumeTailoringService
-from app.domain.entities import JobPosting, Resume
+from app.services.resume.resume_tailoring_service import ResumeTailoringService
+from app.domain.entities.job_posting import JobPosting
+from app.domain.entities.resume import Resume
 
 
 class TailorResumeForJob:

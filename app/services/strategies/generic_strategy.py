@@ -1,7 +1,7 @@
 from app.domain.entities.application_result import ApplicationResult
 from app.domain.entities.job_posting import JobPosting
 from app.domain.value_objects.application_status import ApplicationStatus
-from app.services.application_strategy import ApplicationStrategy
+from app.interfaces.application_strategy import ApplicationStrategy
 from app.interfaces.browser_automation import BrowserAutomation
 
 

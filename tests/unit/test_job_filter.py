@@ -1,4 +1,4 @@
-from app.services.job_filter import JobFilter
+from app.services.job.job_filter import JobFilter
 from app.domain.entities.job_posting import JobPosting
 from app.domain.value_objects.job_preference import JobPreference
 

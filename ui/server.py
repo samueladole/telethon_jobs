@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.domain.entities import PendingApplication
+from app.domain.entities.pending_application import PendingApplication
 
 app = FastAPI()
 PENDING = {}

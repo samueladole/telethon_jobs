@@ -1,4 +1,4 @@
-from app.services.resume_tailoring_service import ResumeTailoringService
+from app.services.resume.resume_tailoring_service import ResumeTailoringService
 from app.domain.entities.resume import Resume
 from app.domain.entities.job_posting import JobPosting
 from app.domain.entities.experience import Experience
