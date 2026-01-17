@@ -1,0 +1,8 @@
+llm:
+  provider: ollama
+  model: llama3
+  temperature: 0.2
+
+application:
+  auto_submit: false
+  min_match_score: 0.8
