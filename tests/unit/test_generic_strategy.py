@@ -1,15 +1,16 @@
 from app.services.strategies.generic_strategy import GenericJobStrategy
-from app.domain.entities import JobPosting
-from app.domain.value_objects import ApplicationStatus
+from app.domain.entities.job_posting import JobPosting
+from app.domain.value_objects.application_status import ApplicationStatus
 
 
 class FakeBrowser:
-    def open(self, url): pass
-    def page_contains(self, text): return True
+    def open(self, url: str): pass
+    def page_contains(self, text: str) -> bool: return True
     def close(self): pass
 
 
 def test_generic_strategy_dry_run():
+    """Test the GenericJobStrategy in dry-run mode."""
     job = JobPosting(
         id="1",
         title="Test Job",

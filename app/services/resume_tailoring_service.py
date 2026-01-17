@@ -11,18 +11,13 @@ class ResumeTailoringService:
     def __init__(self, llm: LLMClient):
         self.llm = llm
 
-    def tailor(self, resume: Resume, job: JobPosting) -> Resume:
+    def tailor(self, resume: Resume, job: JobPosting) -> TailoredResumeResult:
         """Tailor the given resume for the specified job posting."""
         prompt = self._build_prompt(resume, job)
         raw = self.llm.complete(prompt)
         data = json.loads(raw)
         tailored = TailoredResumeResult(**data)
-
-        return Resume(
-            summary=tailored.summary,
-            skills=tailored.skills,
-            experiences=list(exp for exp in tailored.experiences),
-        )
+        return tailored
 
     def _build_prompt(self, resume: Resume, job: JobPosting) -> str:
         return f"""
